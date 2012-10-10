@@ -51,8 +51,10 @@ duplicate' (x:xs) = x : (x : duplicate' xs)
 -- Replicate the elements of a list a given number
 -- of times
 --------------------------------------------------
+replicate' :: [a] -> Int -> [a]
 replicate' [] _ = []
 replicate' _ 0  = []
 replicate' (x:xs) n = (replicate'' x n) ++ replicate' xs n
-    where   replicate'' _ 0 = []
+    where   replicate'' :: a -> Int -> [a]
+            replicate'' _ 0 = []
             replicate'' x n = [x] ++ replicate'' x (n-1)

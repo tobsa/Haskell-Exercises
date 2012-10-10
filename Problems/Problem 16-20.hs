@@ -42,6 +42,7 @@ slice' xs i k  = take k (drop (i-1) xs)
 -- Hint: Use the predefined functions length and 
 -- (++).
 --------------------------------------------------
+rotate' :: [a] -> Int -> [a]
 rotate' [] _ = []
 rotate' xs 0 = xs
 rotate' xs n 
@@ -56,4 +57,7 @@ rotate' xs n
 --
 -- Remove the K'th element from a list.
 --------------------------------------------------
--- Not solved --
+remove' :: [a] -> Int -> (a,[a])
+remove' (x:xs) 1 = (x, xs)
+remove' (x:xs) n = (lhs, x:rhs)
+    where (lhs, rhs) = remove' xs (n-1)

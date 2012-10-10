@@ -52,8 +52,6 @@ rotate' xs n
 
 --------------------------------------------------
 -- Problem 20
--- 
--- Rotate a list N places to the left.
 --
 -- Remove the K'th element from a list.
 --------------------------------------------------

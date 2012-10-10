@@ -30,9 +30,9 @@ split' xs n  = (take n xs, drop n xs)
 -- limits included). Start counting the elements
 -- with 1.
 --------------------------------------------------
+slice' :: [a] -> Int -> Int -> [a]
 slice' [] _ _  = []
-slice' xs i k  = take k dxs
-    where   dxs = drop (i-1) xs
+slice' xs i k  = take k (drop (i-1) xs)
 
 --------------------------------------------------
 -- Problem 19
@@ -42,7 +42,12 @@ slice' xs i k  = take k dxs
 -- Hint: Use the predefined functions length and 
 -- (++).
 --------------------------------------------------
--- Not solved --
+rotate' [] _ = []
+rotate' xs 0 = xs
+rotate' xs n 
+    | n > 0 = (drop n xs) ++ (take n xs) 
+    | n < 0 = (drop (len+n) xs) ++ take (len+n) xs
+    where len = length xs
 
 --------------------------------------------------
 -- Problem 20

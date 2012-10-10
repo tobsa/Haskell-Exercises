@@ -25,10 +25,21 @@ isPalindrome' xs = (head xs) == (last xs) && isPalindrome' (init (tail xs))
 -- Eliminate consecutive duplicates of list 
 -- elements.
 --------------------------------------------------
+compress' :: (Eq a) =>[a] -> [a]
+compress' []     = []
+compress' (x:xs) = x : dropWhile (x==) (compress' xs)
 
-
-
-
+--------------------------------------------------
+-- Problem 9
+-- 
+-- Pack consecutive duplicates of list elements
+-- into sublists. If a list contains repeated
+-- elements they should be placed in seperate
+-- sublists.
+--------------------------------------------------
+pack' :: (Eq a) => [a] -> [[a]]
+pack' []     = []
+pack' (x:xs) = (x : takeWhile (x==) xs) : pack' (dropWhile (x==) xs) 
 
 
 

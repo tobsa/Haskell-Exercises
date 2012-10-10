@@ -3,7 +3,9 @@
 -- 
 -- Drop every N'th element from a list.
 --------------------------------------------------
--- Not solved --
+drop' :: [a] -> Int -> [a]
+drop' [] _ = []
+drop' xs n = (take (n-1) xs) ++ drop' (drop n xs) n
 
 --------------------------------------------------
 -- Problem 17
@@ -12,7 +14,7 @@
 --
 -- Do not use any predefined predicates.
 --------------------------------------------------
--- Not solved --
+
 
 --------------------------------------------------
 -- Problem 18

@@ -14,7 +14,10 @@ drop' xs n = (take (n-1) xs) ++ drop' (drop n xs) n
 --
 -- Do not use any predefined predicates.
 --------------------------------------------------
-
+split' :: [a] -> Int -> ([a],[a])
+split' [] _  = ([],[])
+split' xs 0  = (xs,[])
+split' xs n  = (take n xs, drop n xs)
 
 --------------------------------------------------
 -- Problem 18
@@ -47,4 +50,3 @@ drop' xs n = (take (n-1) xs) ++ drop' (drop n xs) n
 -- Remove the K'th element from a list.
 --------------------------------------------------
 -- Not solved --
-

@@ -30,7 +30,9 @@ split' xs n  = (take n xs, drop n xs)
 -- limits included). Start counting the elements
 -- with 1.
 --------------------------------------------------
--- Not solved --
+slice' [] _ _  = []
+slice' xs i k  = take k dxs
+    where   dxs = drop (i-1) xs
 
 --------------------------------------------------
 -- Problem 19

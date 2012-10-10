@@ -41,3 +41,18 @@
 --
 -- Duplicate the elements of a list
 --------------------------------------------------
+duplicate' :: [a] -> [a]
+duplicate' []     = []
+duplicate' (x:xs) = x : (x : duplicate' xs) 
+
+--------------------------------------------------
+-- Problem 15
+--
+-- Replicate the elements of a list a given number
+-- of times
+--------------------------------------------------
+replicate' [] _ = []
+replicate' _ 0  = []
+replicate' (x:xs) n = (replicate'' x n) ++ replicate' xs n
+    where   replicate'' _ 0 = []
+            replicate'' x n = [x] ++ replicate'' x (n-1)

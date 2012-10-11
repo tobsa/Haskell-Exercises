@@ -4,7 +4,8 @@
 -- Insert an element at a given position into a 
 -- list.
 --------------------------------------------------
--- Not solved --
+insert' :: a -> [a] -> Int -> [a]
+insert' k xs n = (take (n-1) xs) ++ [k] ++ (drop (n-1) xs)   
 
 --------------------------------------------------
 -- Problem 22

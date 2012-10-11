@@ -13,7 +13,8 @@ insert' k xs n = (take (n-1) xs) ++ [k] ++ (drop (n-1) xs)
 -- Create a list containing all integers within a 
 -- given range.
 --------------------------------------------------
--- Not solved --
+range' :: Enum a => a -> a -> [a]
+range' i k = [i..k]
 
 --------------------------------------------------
 -- Problem 23

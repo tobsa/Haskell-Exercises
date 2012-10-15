@@ -4,7 +4,9 @@
 -- Generate the combinations of K distinct objects 
 -- chosen from the N elements of a list
 --------------------------------------------------
--- Not solved --
+combinations' :: [a] -> Int -> [[a]]
+combinations' [] _ = []
+combinations' xs n = 
 
 --------------------------------------------------
 -- Problem 27
